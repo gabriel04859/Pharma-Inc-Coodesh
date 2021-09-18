@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="PharmaInc_NoActionBar" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimaryDark">@color/dark_blue</item>
+        <item name="backgroundColor">@color/white</item>
+        <item name="colorPrimary">@color/blue</item>
+        <item name="android:statusBarColor">@color/blue</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:textColorPrimary">@color/dark_blue</item>
+        <item name="android:textViewStyle">@style/PharmaIncTextView</item>
+    </style>
+
+    <style name="PharmaInc.SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/blue</item>
+        <item name="android:windowBackground">@drawable/bg_splash</item>
+    </style>
+</resources>

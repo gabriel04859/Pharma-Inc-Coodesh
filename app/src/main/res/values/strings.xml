@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Pharma-Inc-Coodesh</string>
+
+    <!-- HomeFragment -->
+    <string name="text_profile">Ver perfil</string>
+    <string name="edit_hint_text_search">Pesquisar</string>
+    <string name="toolbar_pharma_inc">Pharma Inc</string>
+
+    <!-- ProfileFragment -->
+    <string name="toolbar_title_profile">Perfil</string>
+    <string name="label_gender">Gênero</string>
+    <string name="label_phone">Telefone</string>
+    <string name="label_birthday">Data de nascimento</string>
+    <string name="label_address">Endereço</string>
+    <string name="label_nationality">Nacionalidade</string>
+
+    <!-- HomeAdapter -->
+    <string name="text_age">%1$s anos</string>
+    <string name="text_gender"><b>Sexo:</b> %1$s</string>
+
+    <!-- DialogFiltered -->
+    <string name="dialog_title">Filtros</string>
+    <string name="dialog_sex_title">Sexo:</string>
+    <string name="radio_button_male">Masculino</string>
+    <string name="radio_button_female">Feminino</string>
+
+    <string-array name="countries">
+        <item>Austrália</item>
+        <item>Brasil</item>
+        <item>Canadá</item>
+        <item>Suíça</item>
+        <item>Alemanha</item>
+        <item>Dinamarca </item>
+        <item>Espanha</item>
+        <item>Finlândia</item>
+    </string-array>
+</resources>

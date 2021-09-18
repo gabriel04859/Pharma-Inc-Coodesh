@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.MaterialToolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Pharma Inc"
+        android:gravity="center"
+        android:textSize="22sp"
+        style="@style/PharmaIncTextView.Large.Bold"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:background="@color/ice"
+        android:layout_gravity="bottom"/>
+</com.google.android.material.appbar.MaterialToolbar>
