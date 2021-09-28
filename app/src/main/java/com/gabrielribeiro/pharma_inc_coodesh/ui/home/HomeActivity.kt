@@ -20,13 +20,14 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.PharmaInc_NoActionBar)
         super.onCreate(savedInstanceState)
-
-        binding = ActivityHomeBinding.inflate(layoutInflater)
-        setContentView(binding.root)
         viewModel = ViewModelProvider(
             this,
             BaseViewModel.BaseViewModelFactory(UserRepositoryImplemented(RetrofitInstance().getApi()))
         ).get(BaseViewModel::class.java)
+        viewModel.getUser(50)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         setupNavigationView()
 
     }
@@ -39,6 +40,14 @@ class HomeActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this, navController)
     }
 
+    override fun onStart() {
+        super.onStart()
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+    }
     override fun onSupportNavigateUp(): Boolean {
         navController.navigateUp()
         return super.onSupportNavigateUp()

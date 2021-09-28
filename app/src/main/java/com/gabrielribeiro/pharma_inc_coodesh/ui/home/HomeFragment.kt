@@ -22,7 +22,6 @@ import com.gabrielribeiro.pharma_inc_coodesh.utils.Resource
 
 class HomeFragment : Fragment(), HomeAdapter.OnResultClickListener {
     private lateinit var viewModel : BaseViewModel
-    private lateinit var homeViewModel: HomeViewModel
     private var limitSizeUserList = 50
     private var _binding: FragmentHomeBinding? = null
     private lateinit var homeAdapter : HomeAdapter
@@ -47,26 +46,32 @@ class HomeFragment : Fragment(), HomeAdapter.OnResultClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel = (activity as HomeActivity).viewModel
+
+        observerViewModel()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = (activity as HomeActivity).viewModel
-        viewModel.getUser(limitSizeUserList)
+
+
 
         homeAdapter = HomeAdapter(this)
         binding.recyclerViewHome.adapter = homeAdapter
         dialogFilter = DialogFilter(requireActivity())
 
         setupHooks()
-        observerViewModel()
+
     }
 
     private fun setupHooks() {
@@ -119,7 +124,7 @@ class HomeFragment : Fragment(), HomeAdapter.OnResultClickListener {
                     Log.d(TAG, "onCreate: Failure ${result.exception}")
                 }
                 is Resource.Success -> {
-                    Log.d(TAG, "onCreate: Failure ${ result.data?.userResponses!!.size}")
+                    Log.d(TAG, "onCreate: Success ${ result.data?.userResponses!!.size}")
 
                     binding.textError.visibility = View.GONE
                     setUserList(result.data?.userResponses!!)
