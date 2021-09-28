@@ -124,7 +124,7 @@ class HomeFragment : Fragment(), HomeAdapter.OnResultClickListener {
                     Log.d(TAG, "onCreate: Failure ${result.exception}")
                 }
                 is Resource.Success -> {
-                    Log.d(TAG, "onCreate: Success ${ result.data?.userResponses!!.size}")
+                    Log.d(TAG, "onCreate: Success { result.data?.userResponses!!.size}")
 
                     binding.textError.visibility = View.GONE
                     setUserList(result.data?.userResponses!!)
